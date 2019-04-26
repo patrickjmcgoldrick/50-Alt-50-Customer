@@ -98,7 +98,7 @@ class MainTableViewController: UITableViewController {
     }
     
     func updateQuanityOnUI(lineItem: LineItem, indexPath: IndexPath) {
-        var cell = tableView.cellForRow(at: indexPath)!
+        let cell = tableView.cellForRow(at: indexPath)!
         
         if lineItem.selected {
             cell.accessoryType = .none
@@ -142,7 +142,7 @@ class MainTableViewController: UITableViewController {
         
         let lineItem = data[indexPath.row]
         
-        var alert = UIAlertController(title: lineItem.title, message: "How many pounds would you like?", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: lineItem.title, message: "How many pounds would you like?", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Save", style: UIAlertAction.Style.default) {
             UIAlertAction in
             
