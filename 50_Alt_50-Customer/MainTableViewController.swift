@@ -21,7 +21,7 @@ struct LineItem {
 
 class MainTableViewController: UITableViewController {
     let sectionSizes = [4, 3, 2]
-    let sectionNames = ["Lattin Farm", "Carson River Farm", "Medwaldt Organics"]
+    let sectionNames = ["Lattin Farm (15 mi)", "Carson River Farm (25 mi)", "Medwaldt Organics (40 mi)"]
     
     var data = [
         LineItem(id: 1, title: "Garlic", price: 4.0, image: "garlic", selected: false, quantity: 0),

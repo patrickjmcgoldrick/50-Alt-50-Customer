@@ -19,9 +19,9 @@ class FarmsTableViewController: UITableViewController {
     
     let sectionNames = ["Lattin Farm", "Carson River Farm", "Medwaldt Organics"]
     var data = [
-        FarmItem(id: 1, name: "Lattin Farm", distance: 35.0),
-        FarmItem(id: 1, name: "Carson River Farm", distance: 45.0),
-        FarmItem(id: 1, name: "Medwaldt Organics", distance: 50.0),
+        FarmItem(id: 1, name: "Lattin Farm", distance: 15.0),
+        FarmItem(id: 2, name: "Carson River Farm", distance: 25.0),
+        FarmItem(id: 3, name: "Medwaldt Organics", distance: 40.0),
     ]
     
     var selectedIndex = 0
