@@ -20,6 +20,8 @@ struct LineItem {
 }
 
 class MainTableViewController: UITableViewController {
+    let sectionSizes = [4, 3, 2]
+    let sectionNames = ["Lattin Farm", "Carson River Farm", "Medwaldt Organics"]
     
     var data = [
         LineItem(id: 1, title: "Garlic", price: 4.0, image: "garlic", selected: false, quantity: 0),
@@ -61,14 +63,14 @@ class MainTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return sectionNames.count
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return data.count
+        return sectionSizes[section]
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -103,20 +105,27 @@ class MainTableViewController: UITableViewController {
             data[indexPath.row].selected = false
             let sum = calculateTotal()
             let sumString = String.localizedStringWithFormat("%.2F", sum)
-            self.footer?.lblTotal.text = "Totat $\(sumString)"
+            self.footer?.lblTotal.text = "Total $\(sumString)"
             
         } else {
             getQuantity(indexPath: indexPath, cell: cell)
         }
     }
     
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionNames[section]
+    }
+    
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FooterCell") as! FooterTableViewCell
-        
-        footer = cell
-        
-        return cell
+//        if section == 3 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FooterCell") as! FooterTableViewCell
+            
+            footer = cell
+            return cell
+//        }
+//
+//        return nil
     }
    
     /*
@@ -140,13 +149,13 @@ class MainTableViewController: UITableViewController {
                 self.data[indexPath.row].selected = true
                 self.data[indexPath.row].quantity = quantity
                 cell.accessoryType = .checkmark
-                cell.detailTextLabel?.text = "\(quantity) x \(lineItem.price)"
+                cell.detailTextLabel?.text = "\(quantity) x $\(lineItem.price)/lbs"
                 
                 let sum = self.calculateTotal()
                 
                 let sumString = String.localizedStringWithFormat("%.2F", sum)
                 
-                self.footer?.lblTotal.text = "Totat $\(sumString)"
+                self.footer?.lblTotal.text = "Total $\(sumString)"
                 
             } else {
                 print ("failed to parse")

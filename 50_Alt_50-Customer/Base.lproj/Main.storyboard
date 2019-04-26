@@ -47,11 +47,11 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FooterCell" rowHeight="107" id="hxY-Ga-TKf" customClass="FooterTableViewCell" customModule="_0_Alt_50_Customer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="114" width="414" height="107"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FooterCell" rowHeight="151" id="hxY-Ga-TKf" customClass="FooterTableViewCell" customModule="_0_Alt_50_Customer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="114" width="414" height="151"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hxY-Ga-TKf" id="3TD-Gh-z3E">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="106.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Total: $0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTU-Ln-cQK">
@@ -60,12 +60,20 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKH-hR-0CV">
+                                            <rect key="frame" x="70" y="118" width="127" height="42"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <state key="normal" title="Place Order"/>
+                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="EKH-hR-0CV" firstAttribute="centerY" secondItem="wTU-Ln-cQK" secondAttribute="centerY" id="31N-Ns-UUg"/>
+                                        <constraint firstItem="EKH-hR-0CV" firstAttribute="leading" secondItem="3TD-Gh-z3E" secondAttribute="leadingMargin" constant="50" id="GiF-Pv-mSm"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="wTU-Ln-cQK" secondAttribute="trailing" id="Xp7-s6-Q1B"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="wTU-Ln-cQK" secondAttribute="bottom" constant="-12.5" id="yUi-bS-0ml"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.50438648462295532" green="0.77803921699523926" blue="0.51702713966369629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="lblTotal" destination="wTU-Ln-cQK" id="9OG-wj-Dm4"/>
                                 </connections>
