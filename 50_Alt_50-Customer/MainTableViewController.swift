@@ -26,7 +26,11 @@ class MainTableViewController: UITableViewController {
         LineItem(id: 2, title: "Canteloupe",  price: 0.52, image: "cantaloupe", selected: false, quantity: 0),
         LineItem(id: 3, title: "Honeydew", price: 0.83, image: "honeydew", selected: false, quantity: 0),
         LineItem(id: 4, title: "Red Pepper", price: 2.32, image: "red_pepper", selected: false, quantity: 0),
-    ]
+        LineItem(id: 5, title: "Radishes", price: 1.46, image: "radishes", selected: false, quantity: 0),
+        LineItem(id: 6, title: "Beets", price: 0.94, image: "beets", selected: false, quantity: 0),
+        LineItem(id: 7, title: "Green Peas", price: 1.66, image: "green_peas", selected: false, quantity: 0),
+        LineItem(id: 8, title: "Ace Tomatos", price: 2.25, image: "ace_tomatos", selected: false, quantity: 0),
+        LineItem(id: 9, title: "Asian Baby Eggplant", price: 2.25, image: "baby_eggplant", selected: false, quantity: 0),    ]
     
     var footer: FooterTableViewCell?
     
