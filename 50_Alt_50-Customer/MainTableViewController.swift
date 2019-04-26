@@ -12,8 +12,7 @@ struct LineItem {
     
     var id : Int
     var title : String
-    var price : String
-    var fPrice : Float
+    var price : Float
     var image : String
     var selected : Bool
     var quantity : Int
@@ -23,10 +22,10 @@ struct LineItem {
 class MainTableViewController: UITableViewController {
     
     var data = [
-        LineItem(id: 1, title: "Garlic", price: "$4/lbs", fPrice: 4.0, image: "garlic", selected: false, quantity: 0),
-        LineItem(id: 2, title: "Canteloupe", price: "$0.52/lbs", fPrice: 0.52, image: "cantaloupe", selected: false, quantity: 0),
-        LineItem(id: 3, title: "Honeydew", price: "$0.83/lbs", fPrice: 0.83, image: "honeydew", selected: false, quantity: 0),
-        LineItem(id: 4, title: "Red Pepper", price: "$2.32/lbs", fPrice: 2.32, image: "red_pepper", selected: false, quantity: 0),
+        LineItem(id: 1, title: "Garlic", price: 4.0, image: "garlic", selected: false, quantity: 0),
+        LineItem(id: 2, title: "Canteloupe",  price: 0.52, image: "cantaloupe", selected: false, quantity: 0),
+        LineItem(id: 3, title: "Honeydew", price: 0.83, image: "honeydew", selected: false, quantity: 0),
+        LineItem(id: 4, title: "Red Pepper", price: 2.32, image: "red_pepper", selected: false, quantity: 0),
     ]
     
     var footer: FooterTableViewCell?
@@ -76,7 +75,7 @@ class MainTableViewController: UITableViewController {
         let lineItem = data[indexPath.row]
         cell.textLabel?.text = lineItem.title
 //        cell.detailTextLabel?.text = lineItem.price
-        cell.detailTextLabel?.text = "$\(lineItem.fPrice)/lbs"
+        cell.detailTextLabel?.text = "$\(lineItem.price)/lbs"
 
         let image = UIImage(named: lineItem.image)
         cell.imageView?.image = image
@@ -96,7 +95,7 @@ class MainTableViewController: UITableViewController {
         
         if lineItem.selected {
             cell.accessoryType = .none
-            cell.detailTextLabel?.text = lineItem.price
+            cell.detailTextLabel?.text = "$\(lineItem.price)/lbs"
             data[indexPath.row].selected = false
             let sum = calculateTotal()
             let sumString = String.localizedStringWithFormat("%.2F", sum)
@@ -133,7 +132,6 @@ class MainTableViewController: UITableViewController {
         alert.addAction(UIAlertAction(title: "Save", style: UIAlertAction.Style.default) {
             UIAlertAction in
             
-            print (alert.textFields![0].text!)
             if let quantity = Int(alert.textFields![0].text!) {
                 self.data[indexPath.row].selected = true
                 self.data[indexPath.row].quantity = quantity
@@ -150,7 +148,6 @@ class MainTableViewController: UITableViewController {
                 print ("failed to parse")
             }
             
-            print ("Done")
         })
         alert.addTextField(configurationHandler: {(textField: UITextField!) in
             textField.keyboardType = .numberPad
@@ -163,7 +160,7 @@ class MainTableViewController: UITableViewController {
         var sum: Float = 0.0
         for row in data {
             if row.selected == true {
-                sum += Float(row.quantity) * row.fPrice
+                sum += Float(row.quantity) * row.price
             }
         }
         return sum
