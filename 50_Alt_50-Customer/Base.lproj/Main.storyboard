@@ -77,7 +77,14 @@
                             <outlet property="delegate" destination="A3Q-Ce-XY2" id="s05-a0-C1Z"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="50 Alt 50" id="ux7-zz-Vib"/>
+                    <navigationItem key="navigationItem" title="50 Alt 50" id="ux7-zz-Vib">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="kRx-Zx-0ai"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="LfT-ZH-EEd">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="ZEJ-zd-2hj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jhb-Y6-15m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -124,12 +131,12 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="KoN-sj-Ce7"/>
                     <connections>
-                        <segue destination="AZY-4Z-YAh" kind="showDetail" identifier="detailSegue" id="P0d-Lr-4Fb"/>
+                        <segue destination="AZY-4Z-YAh" kind="show" identifier="detailSegue" id="P0d-Lr-4Fb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bol-EY-2pF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-291" y="710"/>
+            <point key="canvasLocation" x="-141" y="-859"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -138,7 +145,19 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Submitted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUu-PI-qW6">
+                                <rect key="frame" x="98.5" y="226" width="217.5" height="34"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <color key="textColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="YUu-PI-qW6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ee8-n2-Eu8"/>
+                            <constraint firstItem="YUu-PI-qW6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="138" id="uaP-yv-juI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -162,7 +181,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9bF-BY-5fa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1339.1304347826087" y="685.71428571428567"/>
+            <point key="canvasLocation" x="-1004" y="-859"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="axR-cD-0TS">
