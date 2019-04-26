@@ -13,6 +13,7 @@ struct LineItem {
     var id : Int
     var title : String
     var price : String
+    var fPrice : Float
     var image : String
     var selected : Bool
     var quantity : Int
@@ -22,13 +23,14 @@ struct LineItem {
 class MainTableViewController: UITableViewController {
     
     var data = [
-        LineItem(id: 1, title: "Garlic", price: "$4/lbs", image: "garlic", selected: false, quantity: 0),
-        LineItem(id: 2, title: "Canteloupe", price: "$0.52/lbs", image: "cantaloupe", selected: false, quantity: 5),
-        LineItem(id: 3, title: "Honeydew", price: "$0.83/lbs", image: "honeydew", selected: false, quantity: 0),
-        LineItem(id: 4, title: "Red Pepper", price: "$2.32/lbs", image: "red_pepper", selected: false, quantity: 10),
+        LineItem(id: 1, title: "Garlic", price: "$4/lbs", fPrice: 4.0, image: "garlic", selected: false, quantity: 0),
+        LineItem(id: 2, title: "Canteloupe", price: "$0.52/lbs", fPrice: 0.52, image: "cantaloupe", selected: false, quantity: 0),
+        LineItem(id: 3, title: "Honeydew", price: "$0.83/lbs", fPrice: 0.83, image: "honeydew", selected: false, quantity: 0),
+        LineItem(id: 4, title: "Red Pepper", price: "$2.32/lbs", fPrice: 2.32, image: "red_pepper", selected: false, quantity: 0),
     ]
     
-
+    var footer: FooterTableViewCell?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -73,8 +75,9 @@ class MainTableViewController: UITableViewController {
         
         let lineItem = data[indexPath.row]
         cell.textLabel?.text = lineItem.title
-        cell.detailTextLabel?.text = lineItem.price
-        
+//        cell.detailTextLabel?.text = lineItem.price
+        cell.detailTextLabel?.text = "$\(lineItem.fPrice)/lbs"
+
         let image = UIImage(named: lineItem.image)
         cell.imageView?.image = image
         // Configure the cell...
@@ -95,11 +98,24 @@ class MainTableViewController: UITableViewController {
             cell.accessoryType = .none
             cell.detailTextLabel?.text = lineItem.price
             data[indexPath.row].selected = false
+            let sum = calculateTotal()
+            let sumString = String.localizedStringWithFormat("%.2F", sum)
+            self.footer?.lblTotal.text = "Totat $\(sumString)"
+            
         } else {
             getQuantity(indexPath: indexPath, cell: cell)
         }
     }
-
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FooterCell") as! FooterTableViewCell
+        
+        footer = cell
+        
+        return cell
+    }
+   
     /*
     // MARK: - Navigation
 
@@ -123,6 +139,13 @@ class MainTableViewController: UITableViewController {
                 self.data[indexPath.row].quantity = quantity
                 cell.accessoryType = .checkmark
                 cell.detailTextLabel?.text = "\(quantity) x \(lineItem.price)"
+                
+                let sum = self.calculateTotal()
+                
+                let sumString = String.localizedStringWithFormat("%.2F", sum)
+                
+                self.footer?.lblTotal.text = "Totat $\(sumString)"
+                
             } else {
                 print ("failed to parse")
             }
@@ -134,5 +157,15 @@ class MainTableViewController: UITableViewController {
         //textField.placeholder = "Enter text:"
         })
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func calculateTotal() -> Float {
+        var sum: Float = 0.0
+        for row in data {
+            if row.selected == true {
+                sum += Float(row.quantity) * row.fPrice
+            }
+        }
+        return sum
     }
 }

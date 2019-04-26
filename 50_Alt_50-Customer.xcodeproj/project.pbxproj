@@ -13,6 +13,7 @@
 		5E87FC5A2272A422009FE950 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E87FC592272A422009FE950 /* Assets.xcassets */; };
 		5E87FC5D2272A422009FE950 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E87FC5B2272A422009FE950 /* LaunchScreen.storyboard */; };
 		5E87FC672272ABEC009FE950 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E87FC662272ABEC009FE950 /* MainTableViewController.swift */; };
+		5E87FC6B227307B7009FE950 /* FooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E87FC6A227307B6009FE950 /* FooterTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		5E87FC5C2272A422009FE950 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E87FC5E2272A422009FE950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E87FC662272ABEC009FE950 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		5E87FC6A227307B6009FE950 /* FooterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				5E87FC522272A41E009FE950 /* AppDelegate.swift */,
+				5E87FC6A227307B6009FE950 /* FooterTableViewCell.swift */,
 				5E87FC542272A41E009FE950 /* ViewController.swift */,
 				5E87FC662272ABEC009FE950 /* MainTableViewController.swift */,
 				5E87FC592272A422009FE950 /* Assets.xcassets */,
@@ -140,6 +143,7 @@
 			files = (
 				5E87FC672272ABEC009FE950 /* MainTableViewController.swift in Sources */,
 				5E87FC552272A41E009FE950 /* ViewController.swift in Sources */,
+				5E87FC6B227307B7009FE950 /* FooterTableViewCell.swift in Sources */,
 				5E87FC532272A41E009FE950 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
