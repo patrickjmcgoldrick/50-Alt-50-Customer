@@ -36,9 +36,15 @@ class MainTableViewController: UITableViewController {
     
     var footer: FooterTableViewCell?
     
+    public var rowIndex: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        addLogo()
+    }
+    
+    func addLogo() {
         let navController = navigationController!
         
         let image = UIImage(named: "navbarImage")
@@ -54,11 +60,7 @@ class MainTableViewController: UITableViewController {
         imageView.contentMode = .scaleAspectFit
         
         navigationItem.titleView = imageView
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -80,7 +82,6 @@ class MainTableViewController: UITableViewController {
         
         let lineItem = data[indexPath.row]
         cell.textLabel?.text = lineItem.title
-//        cell.detailTextLabel?.text = lineItem.price
         cell.detailTextLabel?.text = "$\(lineItem.price)/lbs"
 
         let image = UIImage(named: lineItem.image)
@@ -113,7 +114,7 @@ class MainTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionNames[section]
+        return sectionNames[rowIndex]
     }
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

@@ -16,6 +16,7 @@
 		5E87FC672272ABEC009FE950 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E87FC662272ABEC009FE950 /* MainTableViewController.swift */; };
 		5E87FC6B227307B7009FE950 /* FooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E87FC6A227307B6009FE950 /* FooterTableViewCell.swift */; };
 		5E87FC6D22732500009FE950 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E87FC6C22732500009FE950 /* GoogleService-Info.plist */; };
+		5E87FC6F22737217009FE950 /* FarmsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E87FC6E22737216009FE950 /* FarmsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		5E87FC662272ABEC009FE950 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		5E87FC6A227307B6009FE950 /* FooterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterTableViewCell.swift; sourceTree = "<group>"; };
 		5E87FC6C22732500009FE950 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5E87FC6E22737216009FE950 /* FarmsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmsTableViewController.swift; sourceTree = "<group>"; };
 		6BEFD6FA0FD50153D3531DF6 /* Pods-50_Alt_50-Customer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-50_Alt_50-Customer.release.xcconfig"; path = "Pods/Target Support Files/Pods-50_Alt_50-Customer/Pods-50_Alt_50-Customer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +85,7 @@
 				5E87FC592272A422009FE950 /* Assets.xcassets */,
 				5E87FC5B2272A422009FE950 /* LaunchScreen.storyboard */,
 				5E87FC562272A41E009FE950 /* Main.storyboard */,
+				5E87FC6E22737216009FE950 /* FarmsTableViewController.swift */,
 				5E87FC5E2272A422009FE950 /* Info.plist */,
 				5E87FC6C22732500009FE950 /* GoogleService-Info.plist */,
 			);
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E87FC672272ABEC009FE950 /* MainTableViewController.swift in Sources */,
+				5E87FC6F22737217009FE950 /* FarmsTableViewController.swift in Sources */,
 				5E87FC552272A41E009FE950 /* ViewController.swift in Sources */,
 				5E87FC6B227307B7009FE950 /* FooterTableViewCell.swift in Sources */,
 				5E87FC532272A41E009FE950 /* AppDelegate.swift in Sources */,
