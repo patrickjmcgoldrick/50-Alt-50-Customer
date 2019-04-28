@@ -32,6 +32,12 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         performSegue(withIdentifier: "orderSubmittedSegue", sender: nil)
     }
     
+    var farms = [
+        FarmItem(id: 1, name: "Lattin Farm", distance: 15.0),
+        FarmItem(id: 2, name: "Carson River Farm", distance: 25.0),
+        FarmItem(id: 3, name: "Medwaldt Organics", distance: 40.0),
+    ]
+    
     var data = [
         [
         LineItem(id: 1, title: "Garlic", price: 4.0, image: "garlic", selected: false, quantity: 0),
@@ -103,6 +109,12 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         updateQuanityOnUI(lineItem: lineItem, indexPath: indexPath)
     }
 
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        let farm = farms[selectedSection!]
+        return "\(farm.name) (\(farm.distance) miles away)"
+    }
+    
     func updateQuanityOnUI(lineItem: LineItem, indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
         

@@ -61,10 +61,10 @@
 				5E87FC9E2273A7E8009FE950 /* AppDelegate.swift */,
 				5E87FCA02273A7E8009FE950 /* MasterViewController.swift */,
 				5E87FCA22273A7E8009FE950 /* DetailViewController.swift */,
-				5E87FCA42273A7E8009FE950 /* Main.storyboard */,
 				5EE695D322753C5B00A8A2F0 /* OrderSubmittedViewController.swift */,
 				5E87FCA72273A7ED009FE950 /* Assets.xcassets */,
 				5E87FCA92273A7ED009FE950 /* LaunchScreen.storyboard */,
+				5E87FCA42273A7E8009FE950 /* Main.storyboard */,
 				5E87FCAC2273A7ED009FE950 /* Info.plist */,
 			);
 			path = "50_Alt_50-Customer";
