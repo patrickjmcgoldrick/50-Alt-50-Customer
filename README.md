@@ -6,6 +6,11 @@
 [order_view_with_total]: ./screenshots/order_view_with_total.png "Order View w/Total"
 
 # 50 Alt 50 - Customer App
+## Contact Info
+* James Dexter - jrdexter.50alt50@gmail.com
+* Patrick McGoldrick - pmcgoldrick@gmail.com
+
+
 ## Screenshots
 
 Farm List | Order View | Order View Add | Order View w/ Total
